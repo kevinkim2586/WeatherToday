@@ -56,15 +56,55 @@
 		7C5D859F25CECA25002071A1 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				7C5D85A025CECA25002071A1 /* AppDelegate.swift */,
-				7C5D85A225CECA25002071A1 /* SceneDelegate.swift */,
-				7C5D85A425CECA25002071A1 /* ViewController.swift */,
-				7C5D85A625CECA25002071A1 /* Main.storyboard */,
-				7C5D85A925CECA28002071A1 /* Assets.xcassets */,
-				7C5D85AB25CECA28002071A1 /* LaunchScreen.storyboard */,
+				7C5D85BA25CECB35002071A1 /* Delegates */,
+				7C5D85B625CECB01002071A1 /* Model */,
+				7C5D85B725CECB07002071A1 /* View */,
+				7C5D85B825CECB0A002071A1 /* Controller */,
+				7C5D85B925CECB1F002071A1 /* Assets */,
 				7C5D85AE25CECA28002071A1 /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		7C5D85B625CECB01002071A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C5D85B725CECB07002071A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D85AB25CECA28002071A1 /* LaunchScreen.storyboard */,
+				7C5D85A625CECA25002071A1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C5D85B825CECB0A002071A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D85A425CECA25002071A1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7C5D85B925CECB1F002071A1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D85A925CECA28002071A1 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7C5D85BA25CECB35002071A1 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D85A025CECA25002071A1 /* AppDelegate.swift */,
+				7C5D85A225CECA25002071A1 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
