@@ -43,17 +43,13 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let weather: WeatherModel = weatherModel[indexPath.row]
-        
-        print(weather.weatherCondition)
-     
+
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellNames.cellIdentifierForCity, for: indexPath) as! CityWeatherTableViewCell
     
-        cell.cityWeatherImageView.image = UIImage(
-        
-        //cell.cityWeatherImageView.image = UIImage(systemName: weather.weatherCondition)
+        cell.cityWeatherImageView.image = UIImage(named: weather.weatherCondition)
         cell.cityNameLabel.text = weather.city_name
-        cell.cityTemperatureLabel.text = "섭씨" + String(format: "%.1f", weather.celsius)
-            + " / 화씨 " + String(format: "%.1f", weather.fahrenheit)
+        cell.cityTemperatureLabel.text = "섭씨 " + String(format: "%.1f", weather.celsius)
+            + "도 / 화씨 " + String(format: "%.1f", weather.fahrenheit) + "도"
         cell.cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",weather.rainfall_probability) + "%"
         
         return cell 
