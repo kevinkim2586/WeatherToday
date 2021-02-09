@@ -28,8 +28,5 @@ struct WeatherModel{
             return "sunny"
         }
     }
-    
-    
-    
-    
+ 
 }

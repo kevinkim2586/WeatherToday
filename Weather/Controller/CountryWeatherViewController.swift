@@ -11,15 +11,20 @@ class CountryWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = viewControllerTitle
-        
         cityTableView.delegate = self
+        cityTableView.dataSource = self
         
-
+        title = viewControllerTitle
+        cityTableView.reloadData()
+        
     }
     
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cityTableView.reloadData()
+        title = viewControllerTitle
+        
+    }
 }
 
 
@@ -30,6 +35,7 @@ class CountryWeatherViewController: UIViewController {
 extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
         return weatherModel.count
     }
     

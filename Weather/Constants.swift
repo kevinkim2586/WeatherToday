@@ -11,4 +11,8 @@ struct Constants{
         static let rootToDetailSegue = "rootToDetailSegue"
     }
     
+    struct StoryBoardID{
+        static let countryWeahterVC = "countryWeatherVC"
+    }
+    
 }

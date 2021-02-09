@@ -16,7 +16,7 @@ struct WeatherManager{
         case "한국":
             selectedCountryName = "kr"
         case "독일":
-            selectedCountryName = "s"
+            selectedCountryName = "de"
         case "이탈리아":
             selectedCountryName = "it"
         case "미국":
@@ -37,30 +37,32 @@ struct WeatherManager{
         guard let dataAsset: NSDataAsset = NSDataAsset(name: country) else{
             return
         }
-    
+        
         do{
             self.decodedWeatherData = try decoder.decode([WeatherData].self, from: dataAsset.data)
-        
-            for decodedData in decodedWeatherData{
-                
-                let cityName = decodedData.city_name
-                let state = decodedData.state
-                let celsius = decodedData.celsius
-                let rainfall = decodedData.rainfall_probability
-                
-                self.weatherModel.append = WeatherModel(city_name: cityName, state: state, celsius: celsius, rainfall_probability: rainfall)
-                
-            }
-            return
+            
+            convertToWeatherModel(from: decodedWeatherData)
 
         }catch{
             print("There was an error parsing JSON Data")
             return
         }
-        
-        
     }
     
+    mutating func convertToWeatherModel(from decodedData: [WeatherData]){
+        
+        for decodedData in decodedWeatherData{
+            
+            let cityName = decodedData.city_name
+            let state = decodedData.state
+            let celsius = decodedData.celsius
+            let rainfall = decodedData.rainfall_probability
+            
+            weatherModel.append(WeatherModel(city_name: cityName, state: state, celsius: celsius, rainfall_probability: rainfall))
+            
+        }
+    }
     
+
     
 }

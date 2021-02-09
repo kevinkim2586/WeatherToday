@@ -17,18 +17,9 @@ class RootViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        countryTableView.reloadData()
+        weatherManager.weatherModel = []
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == Constants.Segues.rootToDetailSegue{
-            
-            let countryWeatherVC = segue.destination as! CountryWeatherViewController
-            countryWeatherVC.weatherModel = weatherManager.weatherModel
-            
-        }
-    }
-
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -49,15 +40,19 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+     
         selectedCountry = weatherManager.countryName[indexPath.row]
         weatherManager.setCountryName(selectedCountry: selectedCountry)
+        
         weatherManager.parseJSON(for: weatherManager.selectedCountryName)
-         
-        performSegue(withIdentifier: Constants.Segues.rootToDetailSegue, sender: self)
         
+        guard let countryWeatherVC = self.storyboard?.instantiateViewController(identifier: Constants.StoryBoardID.countryWeahterVC) as? CountryWeatherViewController else{
+            return
+        }
         
-        
+        countryWeatherVC.viewControllerTitle = selectedCountry
+        countryWeatherVC.weatherModel = weatherManager.weatherModel
+        navigationController?.pushViewController(countryWeatherVC, animated: true)
     }
     
     
