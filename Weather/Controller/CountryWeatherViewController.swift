@@ -16,6 +16,7 @@ class CountryWeatherViewController: UIViewController {
         
         title = viewControllerTitle
         cityTableView.reloadData()
+      
         
     }
     
@@ -43,12 +44,17 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
         
         let weather: WeatherModel = weatherModel[indexPath.row]
         
+        print(weather.weatherCondition)
+     
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellNames.cellIdentifierForCity, for: indexPath) as! CityWeatherTableViewCell
     
-        cell.cityWeatherImageView.image = UIImage(systemName: weather.weatherCondition)
+        cell.cityWeatherImageView.image = UIImage(
+        
+        //cell.cityWeatherImageView.image = UIImage(systemName: weather.weatherCondition)
         cell.cityNameLabel.text = weather.city_name
-        cell.cityTemperatureLabel.text = weather.city_name
-        cell.cityPrecipitationLabel.text = String(format: "%.0f",weather.rainfall_probability) + "%"
+        cell.cityTemperatureLabel.text = "섭씨" + String(format: "%.1f", weather.celsius)
+            + " / 화씨 " + String(format: "%.1f", weather.fahrenheit)
+        cell.cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",weather.rainfall_probability) + "%"
         
         return cell 
     }

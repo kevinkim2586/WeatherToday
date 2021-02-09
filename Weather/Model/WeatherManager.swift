@@ -59,7 +59,6 @@ struct WeatherManager{
             let rainfall = decodedData.rainfall_probability
             
             weatherModel.append(WeatherModel(city_name: cityName, state: state, celsius: celsius, rainfall_probability: rainfall))
-            
         }
     }
     
