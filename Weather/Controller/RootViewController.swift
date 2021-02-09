@@ -46,7 +46,7 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource{
         
         weatherManager.parseJSON(for: weatherManager.selectedCountryName)
         
-        guard let countryWeatherVC = self.storyboard?.instantiateViewController(identifier: Constants.StoryBoardID.countryWeahterVC) as? CountryWeatherViewController else{
+        guard let countryWeatherVC = self.storyboard?.instantiateViewController(identifier: Constants.StoryBoardID.countryWeatherVC) as? CountryWeatherViewController else{
             return
         }
         

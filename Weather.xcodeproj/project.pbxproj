@@ -19,6 +19,7 @@
 		7CA9328725D1862500BD71C2 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9328625D1862500BD71C2 /* WeatherData.swift */; };
 		7CA9328B25D2350100BD71C2 /* CityWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9328A25D2350100BD71C2 /* CityWeatherTableViewCell.swift */; };
 		7CA9328F25D2389400BD71C2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9328E25D2389300BD71C2 /* WeatherModel.swift */; };
+		7CA9329625D2655E00BD71C2 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9329525D2655E00BD71C2 /* CityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7CA9328625D1862500BD71C2 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		7CA9328A25D2350100BD71C2 /* CityWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		7CA9328E25D2389300BD71C2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		7CA9329525D2655E00BD71C2 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				7C5D85A425CECA25002071A1 /* RootViewController.swift */,
 				7C5D85BC25CECDA6002071A1 /* CountryWeatherViewController.swift */,
+				7CA9329525D2655E00BD71C2 /* CityViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5D85C025CEDD49002071A1 /* Constants.swift in Sources */,
+				7CA9329625D2655E00BD71C2 /* CityViewController.swift in Sources */,
 				7CA9328325D1861000BD71C2 /* WeatherManager.swift in Sources */,
 				7CA9328725D1862500BD71C2 /* WeatherData.swift in Sources */,
 				7C5D85BD25CECDA6002071A1 /* CountryWeatherViewController.swift in Sources */,

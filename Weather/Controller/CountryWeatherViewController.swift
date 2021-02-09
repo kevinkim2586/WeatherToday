@@ -14,17 +14,13 @@ class CountryWeatherViewController: UIViewController {
         cityTableView.delegate = self
         cityTableView.dataSource = self
         
-        title = viewControllerTitle
+        navigationItem.title = viewControllerTitle
         cityTableView.reloadData()
-      
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cityTableView.reloadData()
-        title = viewControllerTitle
-        
     }
 }
 
@@ -54,6 +50,9 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
         
         return cell 
     }
-    
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }

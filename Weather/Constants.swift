@@ -7,12 +7,9 @@ struct Constants{
         static let cellIdentifierForCity = "cellCity"
     }
     
-    struct Segues{
-        static let rootToDetailSegue = "rootToDetailSegue"
-    }
-    
     struct StoryBoardID{
-        static let countryWeahterVC = "countryWeatherVC"
+        static let countryWeatherVC = "countryWeatherVC"
+        static let cityVC = "cityVC"
     }
     
 }
