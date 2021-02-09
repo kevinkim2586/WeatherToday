@@ -9,12 +9,11 @@ class CityViewController: UIViewController {
     
     var weatherImage: UIImage?
     var weatherCondition: String?
-    
     var celsius: Double?
     var fahrenheit: Double?
-    
     var precipitation: Int?
     
+    var viewControllerTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

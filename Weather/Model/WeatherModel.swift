@@ -28,5 +28,22 @@ struct WeatherModel{
             return "sunny"
         }
     }
+    
+    var weatherConditionInKorean: String{
+        
+        switch state{
+        case 10:
+            return "맑음"
+        case 11:
+            return "흐림"
+        case 12:
+            return "비"
+        case 13:
+            return "눈"
+        default:
+            return "맑음"
+        }
+        
+    }
  
 }

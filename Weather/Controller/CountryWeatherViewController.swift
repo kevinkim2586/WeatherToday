@@ -54,5 +54,22 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        guard let cityVC = self.storyboard?.instantiateViewController(identifier: Constants.StoryBoardID.cityVC) as? CityViewController else{
+            return
+        }
+        
+        let cityWeather: WeatherModel = weatherModel[indexPath.row]
+        
+        cityVC.viewControllerTitle = cityWeather.city_name
+        
+        cityVC.weatherImage = UIImage(named: cityWeather.weatherCondition)
+        cityVC.weatherCondition = cityWeather.weatherConditionInKorean
+        cityVC.celsius = cityWeather.celsius
+        cityVC.fahrenheit = cityWeather.fahrenheit
+        cityVC.precipitation = cityWeather.rainfall_probability
+        
+        navigationController?.pushViewController(cityVC, animated: true)
+
     }
 }
