@@ -139,6 +139,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bzc-Po-ELv"/>
+                    <connections>
+                        <outlet property="cityTableView" destination="Liq-9e-a7c" id="Rya-Up-KrT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqx-N8-KN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

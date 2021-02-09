@@ -4,11 +4,15 @@ struct WeatherModel{
     
     let city_name: String
     let state: Int
-    
     let celsius: Double
-    let fahrenheit: Double              //내가 계산해야 함
-    let rainfall_probability: Int
     
+    var fahrenheit: Double{
+        return celsius * 1.8 + 32.00
+    }
+    
+    let rainfall_probability: Int
+
+   
     var weatherCondition: String{
         
         switch state{
