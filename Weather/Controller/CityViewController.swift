@@ -17,11 +17,22 @@ class CityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     
+        
+        showWeatherInformation()
+        
     }
     
 
-
+    func showWeatherInformation(){
+        
+        cityWeatherImageView.image = weatherImage
+        cityWeatherConditionLabel.text = weatherCondition
+        
+        if let celsiusTemp = celsius, let fahrenheitTemp = fahrenheit, let precipitationRate = precipitation{
+            
+            cityTemperatureLabel.text = "섭씨 " + String(format: "%.1f",celsiusTemp) + "도 / 화씨 " + String(format: "%.1f",fahrenheitTemp) + "도"
+            cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",precipitationRate) + "%"
+        }
+    }
 
 }
