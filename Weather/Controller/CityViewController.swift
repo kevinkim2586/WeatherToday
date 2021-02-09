@@ -18,6 +18,7 @@ class CityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = viewControllerTitle
         showWeatherInformation()
         
     }
