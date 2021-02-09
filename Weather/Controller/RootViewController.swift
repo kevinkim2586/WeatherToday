@@ -8,7 +8,6 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "세계 날씨"
         
         countryTableView.delegate = self
         countryTableView.dataSource = self
@@ -28,13 +27,17 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = countryTableView.dequeueReusableCell(withIdentifier: Constants.cellNames.cellIdentifierForCountry, for: indexPath)
+        let cell = countryTableView.dequeueReusableCell(withIdentifier: Constants.CellNames.cellIdentifierForCountry, for: indexPath)
         
         cell.imageView?.image = weatherManager.countryImage[indexPath.row]
       
         cell.textLabel?.text = weatherManager.countryName[indexPath.row]
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+
     }
     
     

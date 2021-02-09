@@ -2,10 +2,13 @@ import Foundation
 
 struct Constants{
     
-    struct cellNames{
+    struct CellNames{
         static let cellIdentifierForCountry = "cellCountry"
         static let cellIdentifierForCity = "cellCity"
     }
     
+    struct Segues{
+        static let rootToDetailSegue = "rootToDetailSegue"
+    }
     
 }

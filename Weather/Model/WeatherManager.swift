@@ -6,4 +6,7 @@ struct WeatherManager{
     let countryImage: [UIImage] = [#imageLiteral(resourceName: "flag_kr"), #imageLiteral(resourceName: "flag_de"), #imageLiteral(resourceName: "flag_it"), #imageLiteral(resourceName: "flag_us"), #imageLiteral(resourceName: "flag_fr"), #imageLiteral(resourceName: "flag_jp")]
     
     
+    
+    
+    
 }
