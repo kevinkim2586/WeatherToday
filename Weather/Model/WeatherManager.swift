@@ -37,12 +37,10 @@ struct WeatherManager{
         guard let dataAsset: NSDataAsset = NSDataAsset(name: country) else{
             return
         }
-        
         do{
             self.decodedWeatherData = try decoder.decode([WeatherData].self, from: dataAsset.data)
-            
             convertToWeatherModel(from: decodedWeatherData)
-
+            
         }catch{
             print("There was an error parsing JSON Data")
             return

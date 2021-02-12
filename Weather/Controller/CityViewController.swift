@@ -23,7 +23,6 @@ class CityViewController: UIViewController {
         
     }
     
-
     func showWeatherInformation(){
         
         cityWeatherImageView.image = weatherImage
@@ -35,5 +34,4 @@ class CityViewController: UIViewController {
             cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",precipitationRate) + "%"
         }
     }
-
 }

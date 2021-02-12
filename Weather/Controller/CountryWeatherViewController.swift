@@ -25,22 +25,21 @@ class CountryWeatherViewController: UIViewController {
 }
 
 
-
-
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
         return weatherModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cellIdentifier = Constants.CellNames.cellIdentifierForCity
+        
         let weather: WeatherModel = weatherModel[indexPath.row]
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellNames.cellIdentifierForCity, for: indexPath) as! CityWeatherTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CityWeatherTableViewCell
     
         cell.cityWeatherImageView.image = UIImage(named: weather.weatherCondition)
         cell.cityNameLabel.text = weather.city_name

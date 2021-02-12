@@ -12,7 +12,6 @@ struct WeatherModel{
     
     let rainfall_probability: Int
 
-   
     var weatherCondition: String{
         
         switch state{
