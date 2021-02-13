@@ -44,5 +44,13 @@ struct WeatherModel{
         }
         
     }
+    
+    func precipitationIsHigh(probability: Int)->Bool{
+        
+        if probability >= 50{
+            return true
+        }
+        else { return false }
+    }
  
 }

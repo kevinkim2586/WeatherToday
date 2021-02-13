@@ -60,6 +60,8 @@ struct WeatherManager{
         }
     }
     
+    
+    
 
     
 }

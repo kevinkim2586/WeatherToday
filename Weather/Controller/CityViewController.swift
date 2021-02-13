@@ -19,8 +19,18 @@ class CityViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = viewControllerTitle
+        
+        
         showWeatherInformation()
         
+    }
+    
+    func precipitationIsHigh(probability: Int)->Bool{
+        
+        if probability >= 50{
+            return true
+        }
+        else { return false }
     }
     
     func showWeatherInformation(){
@@ -31,7 +41,12 @@ class CityViewController: UIViewController {
         if let celsiusTemp = celsius, let fahrenheitTemp = fahrenheit, let precipitationRate = precipitation{
             
             cityTemperatureLabel.text = "섭씨 " + String(format: "%.1f",celsiusTemp) + "도 / 화씨 " + String(format: "%.1f",fahrenheitTemp) + "도"
+            
             cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",precipitationRate) + "%"
+            
+            if precipitationIsHigh(probability: precipitationRate){
+                cityPrecipitationLabel.textColor = .orange
+            }
         }
     }
 }

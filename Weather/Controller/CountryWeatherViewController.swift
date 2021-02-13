@@ -22,14 +22,7 @@ class CountryWeatherViewController: UIViewController {
         super.viewWillAppear(animated)
         cityTableView.reloadData()
     }
-    
-    func precipitationIsHigh(probability: Int)->Bool{
-        
-        if probability >= 50{
-            return true
-        }
-        else { return false }
-    }
+   
 }
 
 
@@ -46,6 +39,7 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
         let cellIdentifier = Constants.CellNames.cellIdentifierForCity
         
         let weather: WeatherModel = weatherModel[indexPath.row]
+    
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CityWeatherTableViewCell
     
@@ -53,20 +47,11 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
         cell.cityNameLabel.text = weather.city_name
         cell.cityTemperatureLabel.text = "섭씨 " + String(format: "%.1f", weather.celsius)
             + "도 / 화씨 " + String(format: "%.1f", weather.fahrenheit) + "도"
+        cell.cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",weather.rainfall_probability) + "%"
         
-        
-        if precipitationIsHigh(probability: weather.rainfall_probability){
-            
-            cell.cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",weather.rainfall_probability) + "%"
+        if weather.precipitationIsHigh(probability: weather.rainfall_probability){
             cell.cityPrecipitationLabel.textColor = .orange
         }
-        else{
-            cell.cityPrecipitationLabel.text = "강수확률 " + String(format: "%d",weather.rainfall_probability) + "%"
-        }
-        
-        
-        
-        
         return cell 
     }
 
