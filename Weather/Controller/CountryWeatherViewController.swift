@@ -40,7 +40,6 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
         
         let weather: WeatherModel = weatherModel[indexPath.row]
     
-
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CityWeatherTableViewCell
     
         cell.cityWeatherImageView.image = UIImage(named: weather.weatherCondition)
@@ -57,7 +56,6 @@ extension CountryWeatherViewController: UITableViewDelegate, UITableViewDataSour
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         
         guard let cityVC = self.storyboard?.instantiateViewController(identifier: Constants.StoryBoardID.cityVC) as? CityViewController else{
             return
